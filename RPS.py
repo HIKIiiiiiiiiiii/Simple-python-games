@@ -9,7 +9,6 @@ SCISSOR = "SCISSOR"
 
 # Function to show if the user won , lost or drawn :1 = win , 0 = draw 2 = lose
 def win_lose(winner = int ):
-    
     if winner == 1 :
         print("Player won!")
     elif winner == 0:
@@ -34,7 +33,7 @@ def RPS_main():
         print("\t\tWelcome to Rock Paper Scissor game!\n")
         user_input = input("Choose one\nR: Rock\nP: Paper\nS: Scissor\nQ: Exit the program\nYour input : ").upper()
         os.system("clear")
-
+        # Checking the input from user
         if user_input == "R" :
             user_choice = ROCK
         elif user_input == "P" :
