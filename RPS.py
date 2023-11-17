@@ -7,18 +7,9 @@ ROCK = "ROCK"
 PAPER = "PAPER"
 SCISSOR = "SCISSOR"
 
-# Function for computer to choose which one it's gonna roll 
-def choose(choice = int):
-    if choice == 1 :
-        chooser = ROCK
-    elif choice == 2 :
-        chooser = PAPER
-    else :
-        chooser = SCISSOR
-    return chooser
-
-# Function to show if the user won , lost or drawn
+# Function to show if the user won , lost or drawn :1 = win , 0 = draw 2 = lose
 def win_lose(winner = int ):
+    
     if winner == 1 :
         print("Player won!")
     elif winner == 0:
@@ -33,12 +24,13 @@ def RPS_main():
     user_draws = 0
     computer_choice = ""
     user_choice = ""
+    choices = ["ROCK","PAPER","SCISSOR"]
     os.system("clear")
     running = True
 
     # Program start here
     while running:
-        computer_choice = choose(rd.randint(1,3))
+        computer_choice = choices[rd.randint(1,3)-1]
         print("\t\tWelcome to Rock Paper Scissor game!\n")
         user_input = input("Choose one\nR: Rock\nP: Paper\nS: Scissor\nQ: Exit the program\nYour input : ").upper()
         os.system("clear")
@@ -51,6 +43,7 @@ def RPS_main():
             user_choice = SCISSOR
         elif user_input == "Q" :
             running = False
+            break
         else :
             
             print("Please input correctly!")
@@ -73,4 +66,5 @@ def RPS_main():
         time.sleep(2)
         os.system("clear")
     # End of program
+    print(f"Your wins : {user_wins}\nYour loses : {user_loses}\nYour draws : {user_draws}")
     print("Thank you for playing! :)")
