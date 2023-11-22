@@ -15,7 +15,6 @@ def win_lose(winner = int ):
         print("Draw!")
     else :
         print("Player lose!")
-
 # Main runnning function
 def RPS_main():
     user_wins = 0
@@ -26,7 +25,6 @@ def RPS_main():
     choices = ["ROCK","PAPER","SCISSOR"]
     os.system("clear")
     running = True
-
     # Program start here
     while running:
         computer_choice = choices[rd.randint(1,3)-1]
@@ -34,27 +32,26 @@ def RPS_main():
         user_input = input("Choose one\nR: Rock\nP: Paper\nS: Scissor\nQ: Exit the program\nYour input : ").upper()
         os.system("clear")
         # Checking the input from user
-        if user_input == "R" :
+        if user_input == "R":
             user_choice = ROCK
-        elif user_input == "P" :
+        elif user_input == "P":
             user_choice = PAPER
-        elif user_input == "S" :
+        elif user_input == "S":
             user_choice = SCISSOR
-        elif user_input == "Q" :
+        elif user_input == "Q":
             running = False
             break
-        else :
-            
+        else:           
             print("Please input correctly!")
             continue
 
-        if (user_choice == ROCK and computer_choice == SCISSOR) or (user_choice == PAPER and computer_choice == ROCK) or (user_choice == SCISSOR and computer_choice == PAPER) :
+        if (user_choice == ROCK and computer_choice == SCISSOR) or (user_choice == PAPER and computer_choice == ROCK) or (user_choice == SCISSOR and computer_choice == PAPER):
             result = 1
             user_wins += 1
-        elif user_choice == computer_choice :
+        elif user_choice == computer_choice:
             result = 0
             user_draws += 1
-        else :
+        else:
             result = 2
             user_loses += 1
         
